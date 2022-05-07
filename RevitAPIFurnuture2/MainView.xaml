@@ -1,0 +1,28 @@
+﻿<Window x:Class="RevitAPIFurnuture2.MainView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:RevitAPIFurnuture2"
+             mc:Ignorable="d" 
+             Height="400" Width="300"
+             Title="Идентификатор элемента">
+    <StackPanel>
+        <Label Content="Выбрать тип мебели"/>
+        <ComboBox ItemsSource="{Binding FurnitureTypes}"
+                  SelectedValue="{Binding SelectedFurnitureType}"
+                  DisplayMemberPath="Name"
+                  Margin="5"/>
+        <Label Content="Выбрать уровень из списка"/>
+        <ComboBox ItemsSource="{Binding Levels}"
+                  SelectedValue="{Binding SelectedLevel}"
+                  DisplayMemberPath="Name"
+                  Margin="5"/>
+        <Label Content="Указать количество элементов"/>
+        <TextBox Text="{Binding Amount}" Margin="5"/>
+        <Button Content="Применить"
+                Command="{Binding SaveCommand}"
+                Height="40"
+                Margin="5"/>
+    </StackPanel>
+</Window>
